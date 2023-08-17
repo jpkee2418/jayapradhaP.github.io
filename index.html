@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jayapradha Perinparajah </title>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- FAVICON -->
+  <link class="favicon" rel="icon" type="image/img" sizes="32x32" href="images/favicon-32x32.png">
+
+  <!-- Google material icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+   <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+   <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/{{YOUR KIT KEY}}.js" crossorigin="anonymous"></script>
+
+   <!-- TYPE JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+    integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <!-- jQUERY -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+   <!-- SWEET ALERT -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   <!-- EMAIL JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("{{YOUR USER KEY}}");
+    })();
+  </script>
+  
+ <style>
+ .about-content {
+  display: flex;
+  align-items: center;
+}
+
+.column.left {
+  flex-basis: 40%;
+}
+
+.column.right {
+  flex-basis: 60%;
+}
+
+.profile-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+}
+
+  .figma-project {
+    margin-bottom: 20px;
+  }
+  .figma-project img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+  }
+  
+  .contact-content.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.services {
+  margin-top: 50px;
+}
+
+.serv-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.figma-project {
+  margin-top: 20px;
+}
+
+.figma-project img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.figma-project p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adjust the gap between images as needed */
+}
+
+.icons-container img {
+  width: 48px; /* Adjust the image width as needed */
+  height: 48px; /* Adjust the image height as needed */
+}
+.icons-container img {
+  width: 48px; /* Adjust the image width as needed */
+  height: 48px; /* Adjust the image height as needed */
+  transition: filter 0.3s ease; /* Add a smooth transition effect */
+}
+
+.icons-container img:hover {
+  filter: brightness(150%); /* Increase brightness on hover */
+}
+
+/* Assuming you have already defined styles for other elements in the section */
+
+/* To center align the images in the icons-container */
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* This will allow images to wrap to the next line if necessary */
+  gap: 20px; /* Adjust this value to set the space between images */
+}
+
+/* To center align the text in the icons-container */
+.text {
+  text-align: center;
+}
+
+/* Optional: If you want to limit the width of the icons-container */
+.skill-box {
+  max-width: 800px; /* Set a value that suits your layout */
+  margin: 0 auto; /* Center the skill-box horizontally within the column */
+}
+/* Assuming you have already defined styles for other elements in the section */
+
+/* Add a hover effect to the icons */
+.icons-container img {
+  transition: 0.3s; /* Smooth transition for the color change */
+}
+
+/* Change the color of the icon on hover */
+.icons-container img:hover {
+  filter: brightness(1.5); /* Adjust this value to make the icon brighter or darker */
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+    <nav class="navbar">
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div> 
+      <div class="max-width">
+        <div class="logo">
+          <a href="#">My <span> Portfolio </span></span></a>
+        </div>
+        <ul class="menu">
+          <li><a href="#home" class="menu-btn">Home</a></li>
+          <li><a href="#about" class="menu-btn">About</a></li>
+          <li><a href="#services" class="menu-btn">Projects</a></li>
+          <li><a href="#skills" class="menu-btn">Skills</a></li>
+          <li><a href="#contact" class="menu-btn">Contact</a></li>
+        </ul>
+        <div class="menu-btn">
+          <i class="material-icons">menu</i>
+        </div>
+      </div>
+    </nav>
+  <!-- Scroll to top button -->
+    <button id="btnScrollToTop">
+      <i class="material-icons">arrow_upward</i>
+    </button>
+    
+  <!-- home section start-->
+  <section class="home" id="home">
+    <div class="max-width">
+      <div class="home-content">
+        <div class="text-1" data-aos="fade-up">Hello, my name is</div>
+        <div class="text-2">Jayapradha Perinparajah </div>
+        <div class="text-3">Im a <span class="typing"> </span></div>
+      </div>
+    </div>
+  </section>
+
+ <section class="about" id="about">
+  <div class="max-width">
+    <h2 class="title" data-aos="fade-down">About Me</h2>
+    <div class="about-content">
+      <div class="column left" data-aos="fade-right">
+        <img src="images/jp.png" alt="" class="profile-image" />
+      </div>
+      <div class="column right" data-aos="fade-up">
+        <div class="text">
+          I'm Jayapradha and I'm a <span class="typing-2"></span>
+        </div>
+        <p class="paragraph">
+       I'm Jayapradha, a Final Year student at the University of Vavuniya, pursuing a Bachelor of Information and Communication Technology with a specialization in Software Engineering. I'm passionate about both UI/UX design and front-end development. With experience in creating seamless user experiences and proficiency in tools like Figma, Adobe XD, HTML, CSS, and JavaScript, I bring designs to life and build interactive, responsive websites. Explore my portfolio to see my work in UI/UX and front-end development. Let's create engaging digital experiences together.
+        </p>
+        <a href="https://drive.google.com/file/d/15qL60T2C0ZepkhFXdei6njsBbjCJK0i1/view?usp=sharing"> Download Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <!-- Services Section -->
+<section class="services" id="services">
+  <div class="max-width">
+    <h2 class="title" data-aos="fade-down">My Sample Projects</h2>
+    <div class="serv-content">
+      <div class="card" data-aos="fade-up">
+        <div class="box">
+          <i class="fas fa-laptop-code"></i>
+          <div class="text">Weather App UI Design</div>
+          <div class="figma-project">
+            <a href="https://www.figma.com/proto/0dGXd3IgUhZKrtUBtK3jg9/Weather-App-UI-Design?type=design&node-id=161-3819&t=9QWERg6tOURUNwBZ-1&scaling=min-zoom&page-id=2%3A2214&mode=design" target="_blank">
+              <img src="images\iOS.jpg" alt="Weather App UI Design">
+            </a>
+            <p>
+              In my weather app UI design, I aimed to create a user-friendly and visually appealing experience for users to access weather information. Inspired by minimalism and modern design trends, I focused on clean layouts and intuitive navigation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up">
+        <div class="box">
+          <i class="fas fa-code"></i>
+          <div class="text">Portfolio Design</div>
+          <div class="figma-project">
+            <a href="https://www.figma.com/proto/dTgXSNWM5KIrSyIZZfkQUJ/Portfolio-Web-Design?type=design&node-id=1-219&t=qH6iJ5ki4A1WJg9U-1&scaling=min-zoom&page-id=0%3A1&mode=design" target="_blank">
+              <img src="images\Portfolio Web Design.png" alt="Portfolio Design">
+            </a>
+            <p>
+              I adopted a minimalist approach to ensure a clean and clutter-free layout. By using ample white space, clear typography, and minimalist design elements, I aimed to create a sense of simplicity and elegance throughout the portfolio.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up">
+        <div class="box">
+          <i class="fas fa-code"></i>
+          <div class="text">Smart Home Prototype</div>
+          <div class="figma-project">
+            <a href="https://www.figma.com/proto/w30xA29JzMF3X3qvmrbEFA/Smart-Home-App-prototype?type=design&node-id=73-955&t=czj6ppOgOzBycuiS-1&scaling=contain&page-id=73%3A943&mode=design" target="_blank">
+              <img src="images\Capture.PNG" alt="Smart Home Prototype">
+            </a>
+            <p>
+              I focused on creating an interface that is visually appealing, easy to navigate, and efficient in controlling smart home functionalities. Inspired by the principles of minimalism and user-centered design, I aimed to create an interface that is visually appealing and easy to navigate.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more projects following the same structure -->
+
+    </div>
+  </div>
+</section>
+
+<!-- Front-End Projects Section -->
+<section class="front-end-projects" id="front-end-projects">
+  <div class="max-width">
+    <h2 class="title" data-aos="fade-down">Front-End Projects</h2>
+    <div class="serv-content">
+      <div class="card" data-aos="fade-up">
+        <div class="box">
+          <i class="fas fa-laptop-code"></i>
+          <div class="text">Portfolio Front End</div>
+          <div class="figma-project">
+            <a href="https://github.com/jpkee2418/Jp_portfolio_Frontend.github.io" target="_blank">
+              <img src="images\Web capture_20-7-2023_203950_.jpeg" alt="Weather App UI Design">
+            </a>
+            <p>
+              "Exploring the Art of Front-End Web Development: Showcasing my projects and creativity through HTML, CSS, and JavaScript."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up">
+        <div class="box">
+          <i class="fas fa-code"></i>
+          <div class="text">E-commerce Site</div>
+          <div class="figma-project">
+            <a href="https://jpkee2418.github.io/Jp_Frontend.github.io/" target="_blank">
+              <img src="images\Web capture_20-7-2023_204639_.jpeg" alt="Portfolio Design">
+            </a>
+            <p>
+              "Embarking on E-commerce Front-End Journey: Showcasing Online Shopping Marvels with HTML, CSS, and JavaScript."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more front-end projects following the same structure -->
+
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="skills" id="skills">
+  <div class="max-width" data-aos="fade-down">
+    <h2 class="title" data-aos="fade-up">My Skills</h2>
+    <div class="skills-content">
+      <div class="column left">
+        <div class="text">
+          My creative skills & experiences.
+        </div>
+        <p class="paragraph-2">
+          I'm a UI/UX designer with a strong background in visual design, user-centered design, and interaction design. Proficient in prototyping and wireframing, I bring design concepts to life using tools like Figma and Adobe XD. I excel at finding creative solutions to design challenges and collaborating effectively with diverse teams.
+        </p>
+        <p class="paragraph-2">
+          Additionally, I have front-end development skills, including HTML, CSS, JavaScript, React, and Node.js. I can bring my designs to life and build interactive and responsive websites and web applications.
+        </p>
+        <a href="#about">Read More</a>
+      </div>
+      <div class="column right skill-box">
+        <div class="icons-container">
+          <img src="images/skill-icons/icons8-figma-48.png" alt="figma" data-aos="flip-left">
+          <img src="images/skill-icons/icons8-adobe-xd-48.png" alt="adobe xd" data-aos="flip-left">
+          <img src="images/skill-icons/icons8-prototyping-65.png" alt="prototyping" data-aos="flip-left">
+          <img src="images/skill-icons/icons8-css3.svg" alt="css" data-aos="flip-left">
+          <img src="images/skill-icons/icons8-javascript.svg" alt="js" data-aos="flip-left">
+            <img src="images/skill-icons/icons8-html-5.svg" alt="html" data-aos="flip-left">
+		    <img src="images/skill-icons/icons8-react-native.svg" alt="react" data-aos="flip-left">
+          <img src="images/skill-icons/icons8-nodejs.svg" alt="nodejs" data-aos="flip-left">
+          <img src="images/skill-icons/icons8-visual-studio-code-2019.svg" alt="vscode" data-aos="flip-left">
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="max-width">
+    <h2 class="title" data-aos="fade-down">Contact Me</h2>
+    <div class="contact-content center">
+      <div class="column left" data-aos="flip-left">
+        <div class="text">Let's Get in Touch</div>
+        <p class="paragraph-3">I would love to hear from you! Feel free to reach out to discuss potential collaborations, job opportunities, or any inquiries you may have.</p>
+        <div class="icons">
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <div class="info">
+              <div class="head">Name</div>
+              <div class="sub-title">Jayapradha .P</div>
+            </div>
+          </div>
+          <div class="row">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="info">
+              <div class="head">Address</div>
+              <div class="sub-title">Trincomalee, Sri Lanka</div>
+            </div>
+          </div>
+          <div class="row">
+            <i class="fas fa-envelope"></i>
+            <div class="info">
+              <div class="head">Email</div>
+              <div class="sub-title">pradhajp2408@gmail.com</div>
+            </div>
+          </div>
+          <div class="row">
+            <i class="fab fa-linkedin"></i>
+            <div class="info">
+              <div class="head">LinkedIn</div>
+              <div class="sub-title">
+                <a href="https://www.linkedin.com/in/jayapradha-p-8a1a2a214" target="_blank">LinkedIn Profile</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <i class="fab fa-linkedin"></i>
+            <div class="info">
+              <div class="head">Behance</div>
+              <div class="sub-title">
+                <a href="https://www.behance.net/2018icts05jp" target="_blank">Behance Profile</a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <i class="fab fa-facebook"></i>
+            <div class="info">
+              <div class="head">GitHub</div>
+              <div class="sub-title">
+                <a href="https://github.com/jpkee2418" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column right" data-aos="flip-right">
+        <a href="https://www.linkedin.com/in/jayapradha-p-8a1a2a214" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/jpkee2418" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- footer section start -->
+  <footer>
+    <div class="text-center">
+      <span>
+        Created By <a href="https://www.linkedin.com/in/jayapradha-p-8a1a2a214">Jayapradha .P</a> | <span class="far fa-copyright"> </span> <script>document.write(new Date().getFullYear())</script> All rights reserved.
+        <div>
+          <a href="https://www.linkedin.com/in/jayapradha-p-8a1a2a214"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/jpkee2418"><i class="fab fa-github"></i></a>
+        
+        </div>
+      </span>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    // When the user scrolls the page, execute myFunction 
+    window.onscroll = function() {myFunction()};
+    
+    function myFunction() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("myBar").style.width = scrolled + "%";
+    }
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({easing : 'ease-in',delay: 100,duration: 300,offset:100});window.addEventListener('load', AOS.refresh);</script>
+</body>
+
+</html>
